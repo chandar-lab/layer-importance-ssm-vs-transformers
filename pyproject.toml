@@ -1,0 +1,35 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "layerimp"
+version = "1.0.0"
+description = "Layer importance in state-space models vs. transformers: necessity (ablation) vs. plasticity (fine-tuning updates)."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "torch>=2.5",
+    "transformers==4.53.0",
+    "peft>=0.15",
+    "accelerate>=1.0",
+    "datasets>=3.0",
+    "huggingface_hub>=0.30",
+    "safetensors",
+    "numpy<2.0",
+    "scipy",
+    "scikit-learn",
+    "matplotlib",
+    "seaborn",
+    "tqdm",
+]
+
+[project.optional-dependencies]
+bnb = ["bitsandbytes>=0.43"]   # 8-bit AdamW for full fine-tuning of >=7B models
+wandb = ["wandb"]
+
+[tool.setuptools]
+packages = ["layerimp"]
+
+[tool.ruff]
+line-length = 120

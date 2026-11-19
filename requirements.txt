@@ -1,0 +1,16 @@
+torch>=2.5
+transformers==4.53.0
+peft>=0.15
+accelerate>=1.0
+datasets>=3.0
+huggingface_hub>=0.30
+safetensors
+numpy<2.0
+scipy
+scikit-learn
+matplotlib
+seaborn
+tqdm
+# optional
+bitsandbytes>=0.43   # full fine-tuning of >=7B models (paged 8-bit AdamW)
+wandb
